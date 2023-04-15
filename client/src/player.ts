@@ -126,7 +126,7 @@ class Player {
     if (this.gain) {
       this.gain.gain.value = muted ? 0 : this.getGain();
     }
-  }
+    }
 
   /** Function to get the gain from the UI */
   getGain: () => number;
@@ -380,7 +380,12 @@ class Player {
     if (nextTrackIndex !== null) {
       this.playTrack(nextTrackIndex);
     }
-  }
+    }
+
+    clearPlaylist() {
+        this.playlist = [];
+    }
+
 
   /** Plays the next track */
   async playNext() {

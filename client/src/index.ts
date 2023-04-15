@@ -453,3 +453,46 @@ for (const [action, handler] of actionsAndHandlers) {
     console.log(`The media session action ${action}, is not supported`);
   }
 }
+
+async function generateAndAddToPlaylist() {
+    refreshLatentSpace(); // add this line to refresh latent space
+    await generateNewTrack();
+}
+async function generateMultipleTracks(count: number) {
+    player.clearPlaylist();
+    for (let i = 0; i < count; i++) {
+        await generateAndAddToPlaylist();
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const recordButton = document.getElementById("record-button");
+    const playButton = document.getElementById("play-button");
+    const playNextButton = document.getElementById("play-next-button")
+    const totalTracks = 1; // Total number of tracks to be played
+    let tracksPlayed = 0; // Counter for tracks that have been played
+
+    generateMultipleTracks(totalTracks).then(() => { // Generate tracks
+        playButton.click(); // Start playing the first track
+    });
+
+    playButton.addEventListener('click', () => {
+        // Start recording
+        recordButton.click();
+
+        playButton.addEventListener('transitionend', () => {
+            // Check if play button's class has changed to "circle"
+            if (playButton.className === "circle") {
+                tracksPlayed++;
+                if (tracksPlayed === totalTracks) {
+                    // All tracks have been played, trigger record button click to stop recording
+                    recordButton.click();
+                } else {
+                    playNextButton.click(); // Play the next track
+                    playButton.click(); // Start playing the next track
+                }
+            }
+        });
+    });
+});
