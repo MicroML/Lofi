@@ -1,7 +1,7 @@
 import json
 import sys 
 
-sys.path.append("/root/Lofi")
+sys.path.append("")
 
 import torch
 from flask import Flask, request, jsonify
