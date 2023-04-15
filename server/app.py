@@ -1,4 +1,7 @@
 import json
+import sys
+
+sys.path.append("")
 
 import torch
 from flask import Flask, request, jsonify
