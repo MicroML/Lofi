@@ -498,6 +498,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         recordButton.click();
                     }, 1000);
+
+                    setTimeout(() => {
+                        location.reload();
+                    }, 5000);
                     //playButton.click(); // Start playing the next track
                 }
             }
