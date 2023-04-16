@@ -468,15 +468,14 @@ async function generateMultipleTracks(count: number) {
 
 
 
-
-
 //Original Automation code. 
 document.addEventListener('DOMContentLoaded', () => {
     const recordButton = document.getElementById("record-button");
     const playButton = document.getElementById("play-button");
     const playNextButton = document.getElementById("play-next-button")
-    const totalTracks = 1; // Total number of tracks to be played
+    const totalTracks = 3; // Total number of tracks to be played
     let tracksPlayed = 0; // Counter for tracks that have been played
+    console.log('recordButton:', recordButton);
 
     generateMultipleTracks(totalTracks).then(() => { // Generate tracks
         playButton.click(); // Start playing the first track
@@ -495,7 +494,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     recordButton.click();
                 } else {
                     playNextButton.click(); // Play the next track
-                    playButton.click(); // Start playing the next track
+                    console.log(recordButton);
+                    setTimeout(() => {
+                        recordButton.click();
+                    }, 1000);
+                    //playButton.click(); // Start playing the next track
                 }
             }
         });
