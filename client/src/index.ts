@@ -454,6 +454,7 @@ for (const [action, handler] of actionsAndHandlers) {
   }
 }
 
+
 async function generateAndAddToPlaylist() {
     refreshLatentSpace(); // add this line to refresh latent space
     await generateNewTrack();
@@ -466,6 +467,10 @@ async function generateMultipleTracks(count: number) {
 }
 
 
+
+
+
+//Original Automation code. 
 document.addEventListener('DOMContentLoaded', () => {
     const recordButton = document.getElementById("record-button");
     const playButton = document.getElementById("play-button");
@@ -496,3 +501,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

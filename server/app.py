@@ -1,7 +1,7 @@
 import json
 import sys 
 
-sys.path.append("/Users/briandevadason/Github-Files/Lofi")
+sys.path.append("/root/Lofi")
 
 import torch
 from flask import Flask, request, jsonify
