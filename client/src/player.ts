@@ -1,9 +1,12 @@
+//declare module lamejs;
 import * as Tone from 'tone';
 import { getInstrumentFilters, getInstrument, Instrument } from './instruments';
 import * as Samples from './samples';
 import { Track } from './track';
 import { compress } from './helper';
 import { refreshLatentSpace, generateNewTrack } from '.';
+// @ts-ingore
+//import lamejs from 'lamejs';
 
 /**
  * A class that plays a Track by synthesizing events in Tone.js.
@@ -48,7 +51,7 @@ class Player {
        if (recording?.size > 0) {
          const url = URL.createObjectURL(recording);
          const anchor = document.createElement('a');
-         anchor.download = `lofi-record.${type}`;
+         anchor.download = `lofi-record-S1.${type}`;
          anchor.href = url;
          anchor.click();
        }

@@ -454,7 +454,7 @@ for (const [action, handler] of actionsAndHandlers) {
   }
 }
 
-
+//Automation code to generate tracks and record them
 async function generateAndAddToPlaylist() {
     refreshLatentSpace(); // add this line to refresh latent space
     await generateNewTrack();
@@ -466,14 +466,11 @@ async function generateMultipleTracks(count: number) {
     }
 }
 
-
-
-//Original Automation code. 
 document.addEventListener('DOMContentLoaded', () => {
     const recordButton = document.getElementById("record-button");
     const playButton = document.getElementById("play-button");
     const playNextButton = document.getElementById("play-next-button")
-    const totalTracks = 3; // Total number of tracks to be played
+    const totalTracks = 1; // Total number of tracks to be played
     let tracksPlayed = 0; // Counter for tracks that have been played
     console.log('recordButton:', recordButton);
 
@@ -495,6 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     playNextButton.click(); // Play the next track
                     console.log(recordButton);
+
                     setTimeout(() => {
                         recordButton.click();
                     }, 1000);
@@ -502,7 +500,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         location.reload();
                     }, 5000);
-                    //playButton.click(); // Start playing the next track
                 }
             }
         });
