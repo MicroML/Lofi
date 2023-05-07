@@ -75,6 +75,4 @@ export const selectDrumbeat = (bpm: number, energy: number): [string, number] =>
   );
 
   return [sampleGroup, index];
-};
-
-// Testing Commits 3
+}
