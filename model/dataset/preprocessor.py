@@ -22,8 +22,8 @@ headers = {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
     "referer": "https://www.google.com/"
 }
-client_id = Path("spotify_client_id").read_text()
-client_secret = Path("spotify_client_secret").read_text()
+client_id = "99935fd311b44392ba6be66119aadad2"
+client_secret = "55dbee84431a4efdabc1ba6f8faf8bff"
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id, client_secret))
 
 
